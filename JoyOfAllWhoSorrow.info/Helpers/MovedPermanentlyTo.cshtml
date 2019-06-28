@@ -1,0 +1,20 @@
+﻿@{
+    string @loc = Page[0] ?? "/";
+    @Response.AddHeader("Location", loc);
+    @Response.SetStatus(HttpStatusCode.MovedPermanently);
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=@loc">
+    <link rel="canonical" href="@loc" />
+    <script language="javascript">
+        window.location.href = "@loc"
+    </script>
+    <title>Redirect to @loc</title>
+</head>
+<body>
+    If you are not redirected automatically, follow the <a href='@loc'>link to @loc</a>
+</body>
+</html>

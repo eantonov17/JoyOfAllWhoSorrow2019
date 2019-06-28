@@ -1,0 +1,38 @@
+﻿@{
+    Page.Code = "FundRaising";
+
+    var ru = Page.IsRu;
+    Page.Title = ru ? "Сбор средств" : "Fund Raising";
+
+    var _adIdx = Session["AdIdx"];
+    int adIdx = 0;
+    if (_adIdx == null)
+    {
+        adIdx = new Random().Next();
+    }
+    else
+    {
+        adIdx = 1 + (int)_adIdx;
+    }
+    Session["AdIdx"] = adIdx;
+}
+<div style="background-color:white">
+    <div class="s-content">
+        @if (ru)
+        {
+            <h4>Приход получает комиссионые от покупки товаров у этих продавцов</h4>
+        }
+        else
+        {
+            <h4>Parish receives commissions from purchases at these sellers</h4>
+        }
+    </div>
+</div>
+
+<div style="background-color:hsl(190, 64%, 79%); clear:both; padding:.25em; text-align:center">
+    <div class="s-content-narrow">
+        @Advertisement.ExcelligenceLearningCorporation(ru, adIdx)
+        @Advertisement.SightseeingPass(ru, adIdx)
+        @Advertisement.PersonalLoans(ru, adIdx)
+    </div>
+</div>

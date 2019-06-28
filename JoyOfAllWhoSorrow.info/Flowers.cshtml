@@ -1,0 +1,71 @@
+﻿@{
+    Page.Code = "Flowers";
+
+    var ru = Page.IsRu;
+    Page.Title = ru ? "Цветы" : "Flowers";
+    //var address = ru ? "Адрес" : "Address";
+}
+<div>
+    <section class="s-content">
+        <img src="~/Images/Pascha 2016.jpg"
+             alt="@if (ru) {<text>Пасха 2016</text>}else{<text>Pascha 2016</text>}"
+             style="width:320px;height:213px;margin:0.2em 0 0 0">
+        <img src="~/Images/Pasсha 2017.jpg"
+             alt="@if (ru) {<text>Пасха 2017</text>}else{<text>Pascha 2017</text>}"
+             style="width:320px;height:213px;margin:0.2em 0 0 0">
+    </section>
+</div>
+
+<div style="background-color:hsl(190, 64%, 79%); clear:both; padding:.25em; text-align:center">
+    <div class="s-content-narrow">
+        @if (ru)
+        {
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="LTHM3J4SVNSNJ">
+                <input type="image" src="https://www.paypalobjects.com/ru_RU/RU/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal — более безопасный и легкий способ оплаты через Интернет!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <h2>Цветочный фонд просит пожертвования на Пасхальное убранство храма</h2>
+            </div>
+            <p>Цветы в православном храме не только уместны, но и очень желательны. Их красота напоминает человеку о совершенстве небесном, о райском саде. Цветочное оформление помогает создать ощущение праздника, подчеркнуть значимость отмечаемого Церковью события.</p>
+            <p>Светлое Христово Воскресенье, или Пасха – самый большой и радостный православный праздник, величайшее событие для всех православных христиан.  В этот день храм украшают по-особому торжественно.</p>
+            <p>Благодаря Вашим пожертвованиям церковь получит возможность заказать большую партию цветов на Пасху.  Имена жертвователей будут помянуты на Пасхальной Литургии.</p>
+        }
+        else
+        {
+            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="hosted_button_id" value="74LLRJJP9DBT2">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+            </form>
+            <div style="max-width: 500px; margin: 0 auto;">
+                <h2>The Flower Fund asks donations for the Easter decoration of the temple</h2>
+            </div>
+            <p>Flowers in an Orthodox church are not only appropriate, but also desirable. Their beauty reminds man of the perfection of the Heavenly, of the Garden of Eden. Flower decoration helps create a sense of celebration, emphasize the significance of the event marked by the Church.</p>
+            <p>Bright day of Resurrection of Christ, the day of Pascha or Easter is the biggest and most joyful Orthodox feast, the greatest event for all Orthodox Christians. On this day the church is solemnly decorated in a special way.</p>
+            <p>Thanks to your donations, the church will be able to order a large batch of flowers for Easter. The names of the donors will be mentioned at the Paschal Liturgy.</p>
+        }
+    </div>
+</div>
+
+@*https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=8EG7YA64B6V2E&source=url*@
+
+@*<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input type="hidden" name="hosted_button_id" value="8EG7YA64B6V2E" />
+        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" />
+    </form>*@
+
+
+@*https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=TCEVAZZVLVK22&source=url*@
+
+@*<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_s-xclick" />
+        <input type="hidden" name="hosted_button_id" value="TCEVAZZVLVK22" />
+        <input type="image" src="https://www.paypalobjects.com/ru_RU/RU/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+        <img alt="" border="0" src="https://www.paypal.com/ru_RU/i/scr/pixel.gif" width="1" height="1" />
+    </form>*@

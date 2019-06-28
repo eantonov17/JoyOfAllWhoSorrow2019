@@ -1,0 +1,101 @@
+﻿@helper Ad(Boolean ru, string href, string t, string m, string tR, string mR, string img, int w, int h, string alt)
+{
+    <a href="@href" target="_blank">
+        @if (ru)
+        {
+            <h1>@tR</h1><br />
+            <h2>@mR</h2><br />
+        }
+        else
+        {
+            <h1>@t</h1><br />
+            <h2>@m</h2><br />
+        }
+        <img src="@img" width="@w.ToString()" height="@h.ToString()" alt="@alt" border="0" />
+    </a><br />
+}
+
+@helper All(Boolean ru, string publisher, int adIdx)
+{
+    switch (publisher)
+    {
+        case "Excelligence Learning Corporation":
+            @Advertisement.ExcelligenceLearningCorporation(ru, adIdx);
+            break;
+    }
+}
+
+@helper ExcelligenceLearningCorporation(Boolean ru, int adIdx)
+{
+    switch (adIdx)
+    {
+        default:
+            @Advertisement.Ad(ru, "http://www.dpbolvw.net/click-8977576-10928932",
+                "Back to school? - Our backpack is full!", "Low prices on all school supplies!",
+                "Опять в школу? - А мы готовы!", "Школьные принадлежности со скидками!",
+                "http://www.ftjcfx.com/image-8977576-10928932", 300, 250, "Essential School Supplies!"); ;
+            break;
+    }
+}
+
+@helper SightseeingPassA(Boolean ru, string href, string img, int w, int h, string city, string cityR)
+{
+    <a href="@href" target="_blank">
+        @if (ru)
+        {
+            <h1>Опять отпуск? - Что делать?</h1><br />
+            <h2>Посмотри @cityR! Почти даром!</h2><br />
+        }
+        else
+        {
+            <h1>Vacations again? - What will I do?</h1><br />
+            <h2>See @city! Almost for free!</h2><br />
+        }
+        <img src="@img" width="@w.ToString()" height="@h.ToString()" alt="@city Sightseeing Pass" border="0" />
+    </a><br />
+}
+
+@helper SightseeingPass(Boolean ru, int adIdx)
+{
+    int N = 5;
+
+    switch (new Random(adIdx).Next() % N)
+    {
+        case 0:
+            @SightseeingPassA(ru, "http://www.dpbolvw.net/click-8977576-13171337", "http://www.awltovhc.com/image-8977576-13171337", 300, 250, "Washington DC", "Вашингтон");
+            break;
+        case 1:
+            @SightseeingPassA(ru, "http://www.jdoqocy.com/click-8977576-13171334", "http://www.lduhtrp.net/image-8977576-13171334", 300, 250, "San Francisco", "Сан Франциско");
+            break;
+        case 2:
+            @SightseeingPassA(ru, "http://www.dpbolvw.net/click-8977576-13171333", "http://www.lduhtrp.net/image-8977576-13171333", 300, 250, "Philadelphia", "Филадельфию");
+            break;
+        case 3:
+            @SightseeingPassA(ru, "http://www.tkqlhce.com/click-8977576-13171322", "http://www.ftjcfx.com/image-8977576-13171322", 300, 230, "Miami", "Майми");
+            break;
+        default:
+            @SightseeingPassA(ru, "http://www.dpbolvw.net/click-8977576-13126395", "http://www.ftjcfx.com/image-8977576-13126395", 250, 250, "New York", "Нью-Йорк");
+            break;
+    }
+}
+
+@helper PersonalLoans(Boolean ru, int adIdx)
+{
+    int N = 2;
+    switch (new Random(adIdx).Next() % N)
+    {
+        case 0:
+            @Advertisement.Ad(ru, "http://www.anrdoezrs.net/click-8977576-11821239",
+                "Wedding soon but no money?", "Just borrow what you need!",
+                "Свадьба скоро, а денег нет?", "Займи сколько надо!",
+                "http://www.ftjcfx.com/image-8977576-11821239", 300, 250, "Personal Loans");
+            break;
+
+        default:
+            @Advertisement.Ad(ru, "http://www.jdoqocy.com/click-8977576-11821235",
+                "Vacation again? But I got no money!", "Just borrow what you need!",
+                "Опять отпуск? Но денег нет!", "Займи сколько надо!",
+                "http://www.ftjcfx.com/image-8977576-11821235", 250, 250, "Personal Loans");
+            break;
+    }
+}

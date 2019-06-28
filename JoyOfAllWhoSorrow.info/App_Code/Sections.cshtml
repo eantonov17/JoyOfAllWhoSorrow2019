@@ -1,0 +1,94 @@
+﻿@*    // For more information, visit https://go.microsoft.com/fwlink/?LinkID=204658*@
+@helper Donate(Boolean ru)
+{
+    <div style="background-color:hsl(50, 75%, 80%)">
+        <div class="s-content">
+            @if (ru)
+            {
+                <form id="payPalRuForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="ZQCD77CLS4PSN">
+                </form>
+                <h4>Cтроим наш новый храм!</h4>
+                @*<p>Любое пожертвование важно!</p>*@
+                <p><a href="javascript:document.getElementById('payPalRuForm').submit()">Можно пожертвовать <img style="vertical-align: middle;" src="https://www.paypalobjects.com/ru_RU/RU/i/btn/btn_donate_SM.gif" border="0" alt="PayPal — более безопасный и легкий способ оплаты через Интернет!" /> любую сумму через PayPal.</a></p>
+                @*<p><a href="~/FundRaising/ru">Можно помочь нашему сбору средств покупками</a></p>*@
+                @*<p>Больше о фонде строительства нового храма на <a target="_blank" href="//www.stxeniafund.com">www.stxeniafund.com</a></p>*@
+            }
+            else
+            {
+                <form id="payPalEnForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="E5YPB4DC3PLFY">
+                </form>
+                <h4>We are building our new temple!</h4>
+                @*<p>Any donation counts!</p>*@
+                <p><a href="javascript:document.getElementById('payPalEnForm').submit()">You can donate <img style="vertical-align: middle;" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" alt="PayPal — The safer, easier way to pay online!" /> any amount using PayPal.</a></p>
+                @*<p><a href="~/FundRaising">You can help our fundraising by purchasing</a></p>*@
+                @*<p>More about new church building fundraising at <a target="_blank" href="//www.stxeniafund.com">www.stxeniafund.com</a></p>*@
+            }
+        </div>
+    </div>
+}
+@*    // For more information, visit https://go.microsoft.com/fwlink/?LinkID=204658*@
+@helper Cemetery(Boolean ru)
+{
+    <div style="background-color:white">
+        <div class="s-content">
+            @if (ru)
+            {
+                <h4>У нас есть православное кладбище в Атланте</h4>
+                <p>Участки для захоронения на благословенной земле рядом с традиционной православной часовней.</p>
+                <p>Полная информация на <a target="_blank" href="//www.stmichaelgarden.com/about">www.stmichaelgarden.com/about</a></p>
+            }
+            else
+            {
+                <h4>We have an Orthodox cemetery in Atlanta</h4>
+                <p>Burial plots on blessed land with a traditional Orthodox chapel</p>
+                <p>Full information at <a target="_blank" href="//www.stmichaelgarden.com/about">www.stmichaelgarden.com/about</a></p>
+            }
+        </div>
+    </div>
+}
+@helper BaptismOnLakeLanier(Boolean ru)
+{
+    <div style="background-color:hsl(190, 65%, 80%);">
+        <div class="s-content">
+            @if (ru)
+            {
+                <h4>Великое освящение воды на озере Ланьир</h4>
+                <p>19 января после служб в храме мы выедем на озеро Ланьир и освятим там воду.</p>
+                <p>Встречаемся на озере в 13:30.</p>
+                <p>Место: Mary Alice Park </p>
+                <p>
+                    Адрес:  <a style="display:block" target="_blank" href="https://maps.google.com/?q=1700+Mary+Alice+Park+Rd+Cumming+GA+30041">1700 Mary Alice Park Rd, Cumming, GA 30041</a>
+                </p>
+                if (Page.Code == "greatblessinglanier")
+                {
+                    <p>Смотрите ниже как найти</p>
+                }
+                else
+                {
+                    <p><a target="_self" href="/greatblessinglanier/ru">Как найти Mary Alice Park</a></p>
+                }
+            }
+            else
+            {
+                <h4>Great Blessing of Water at Lake Lanier</h4>
+                <p>On January 19th, after church services, we will drive to the lake Lanier and bless the water there.</p>
+                <p>We meet at the lake at 1:30PM.</p>
+                <p>Location: Mary Alice Park </p>
+                <p>Address: <a style="display:block" target="_blank" href="https://maps.google.com/?q=1700+Mary+Alice+Park+Rd+Cumming+GA+30041">1700 Mary Alice Park Rd, Cumming, GA 30041</a></p>
+                if (Page.Code == "greatblessinglanier")
+                {
+                    <p>See directions below</p>
+                }
+                else
+                {
+                    <p><a target="_self" href="/greatblessinglanier">Directions to Mary Alice Park </a></p>
+                }
+            }
+        </div>
+    </div>
+}
+

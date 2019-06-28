@@ -1,0 +1,23 @@
+﻿@{
+    try
+    {
+        // Common layout=master page for all pages
+        Layout = "~/_SiteLayout.cshtml";
+
+        // By def: /path/ru is a Russian lang page
+        //Note, /ru will not included here, but is included in the ru.cshtml's code
+        Page.IsRu = string.Compare(UrlData[0], "ru", true) == 0;
+
+        RunPage();
+    }
+    catch (System.Threading.ThreadAbortException)
+    {
+        throw;
+    }
+    catch (Exception)
+    {
+        // TODO handle the error: sent an e-mail? write to DB? Not much point to tell user...
+        Response.Redirect("~/?error=" +
+            HttpUtility.UrlEncode(Request.AppRelativeCurrentExecutionFilePath));
+    }
+}

@@ -1,0 +1,175 @@
+﻿@{
+    var ru = Page.IsRu;
+    var lang = ru ? "ru" : "en";
+}
+<!DOCTYPE html>
+<html lang="@lang">
+<head>
+    <meta charset="utf-8" />
+    @*<meta http-equiv="etag" content="6409d92a5906419e95d56b1e03cb28c7" />*@
+    @if (ru)
+    {
+        <title>@Page.Title - Всех Скорбящих Радость</title>
+        <meta name="keywords" content="Атланта, Христианство, Церковь, Камминг, Джорджия, Иконография, Иконы, Всех Скорбящих Радость, Московский Патриархат, Православное, Православие, РПЦЗ, Религия, Русская Православная Церковь Заграницей" />
+        <meta name="description" content="Cлужбы на церковно-славянском и английском. Расписание служб, контактная инфрормация, события церковной и культурной жизни." />
+        <meta property="og:description" content="Cлужбы на церковно-славянском и английском. Расписание служб, контактная инфрормация, события церковной и культурной жизни." />
+    }
+    else
+    {
+        <title>@Page.Title - Joy of All Who Sorrow</title>
+        <meta name="keywords" content="Atlanta, Christianity, Church, Cumming, Georgia, Iconography, Icons, Joy of All Who Sorrow, Moscow Patriarchate, Orthodox, Orthodoxy, ROCOR, Religion, Russian Orthodox Church Abroad" />
+        <meta name="description" content="Cлужбы на церковно-славянском и английском. Services in Church Slavonic and English. Schedule of services, contact information, religious and cultural events." />
+        <meta property="og:description" content="Cлужбы на церковно-славянском и английском. Services in Church Slavonic and English. Schedule of services, contact information, religious and cultural events." />
+    }
+    @*http://ogp.me/*@
+    <meta property="og:title" content="Russian Orthodox Church Joy of All Who Sorrow, Cumming, Georgia, USA" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="//joyofallwhosorrow.info" />
+    <meta property="og:image" content="~/Images/joy-building.jpg" />
+    <meta property="og:image" content="~/Images/joy-small.jpg" />
+    <meta property="og:description" content="Parish of the Russian Orthodox Church located in Cumming, Georgia. Services in Church Slavonic and English. Schedule of services, contact information, religious and cultural events." />
+    <meta property="og:determiner" content="the" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="ru_RU" />
+    <meta property="og:site_name" content="Joy of All Who Sorrow" />
+    <meta property="fb:admins" content="joyofallwhosorrowga" />
+    <meta name="geo.placename" content="6728 Campground Rd, Cumming, GA 30040, USA" />
+    <meta name="geo.position" content="34.1833460;-84.2455590" />
+    <meta name="geo.region" content="US-Georgia" />
+    <meta name="ICBM" content="34.1833460, -84.2455590" />
+    <meta name="SKYPE_TOOLBAR" content="SKYPE_TOOLBAR_PARSER_COMPATIBLE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    @*<link href="~/Content/themes/base/jquery.ui.all.css" rel="stylesheet" type="text/css" />*@
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Images/Joy-icon.jpg" rel="shortcut icon" type="image/jpeg" />
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery-ui-1.10.3.js"></script>
+        <script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+</head>
+
+<body>
+    <header class="s-header">
+        <div class="s-content s-flex-space-around-centered-row">
+            <table style="border:none; padding:0; margin:0">
+                <tr>
+                    <td class="s-title @if (ru) { <text>s-selected</text> }">
+                        <a style="display:block" href="/ru">ВСЕХ СКОРБЯЩИХ РАДОСТЬ</a>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="s-title @if (!ru) { <text>s-selected</text> }">
+                        <a style="display:block" href="/">JOY OF ALL WHO SORROW</a>
+                    </td>
+                </tr>
+            </table>
+            <table style="border:none; padding:0; margin:0;">
+                <tr>
+                    <td class="s-button">
+                        <a style="display:block" target="_blank" href="https://maps.google.com/?q=6728+Campground+Rd+Cumming+GA+30040"> 6728 Campground Rd, Cumming, GA 30040, USA </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="s-button">
+                        <a style="display:block" target="_blank" href="tel:+16785766176">+1-678-576-6176</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <nav style="margin:.2rem">
+            <div class="s-content s-flex-space-around-centered-row">
+                <section role="menu">
+                    @{
+                        // Go to the other language button's text
+                        var s = ru ? "English" : "Русский";
+                        string href = Page.Code;
+                        switch (Page.Code)
+                        {
+                            // if there is a special case it should be here
+                            case "About":
+                            case "Contact":
+                            case "Flowers":
+                            case "greatblessinglanier":
+                            case "FundRaising":
+                                if (!ru) { href += "/ru"; }
+                                break;
+                            case "Login":
+                            case "Register":
+                                href = "Account/" + href;
+                                if (!ru) { href += "/ru"; }
+                                break;
+                            default: href = ru ? "" : "ru"; break;
+                        }
+                    }
+                    <a style="float:left" href="/@href">@s</a>
+                    @if (ru)
+                    {
+                        <a style="float:left" @if (Page.Code == "Index") { <text> class="s-selected" </text> } href="/ru">Главная</a>
+                        @*<a style="float:left" @if (Page.Code == "Flowers") { <text> class="s-selected" </text> } href="/Flowers/ru">Цветы</a>*@
+                        @*<a style="float:left" @if (Page.Code == "greatblessinglanier") { <text> class="s-selected" </text> } href="/greatblessinglanier/ru">Освящение воды на озере Ланьир</a>*@
+                        @*<a style="float:left" @if (Page.Code == "FundRaising") { <text> class="s-selected" </text> } href="/FundRaising/ru">Сбор средств</a>*@
+                        @*<a style="float:left" @if (Page.Code == "About") { <text> class="s-selected" </text> } href="/About/ru">О нас</a>*@
+                        <a style="float:left" @if (Page.Code == "Contact") { <text> class="s-selected" </text> } href="/Contact/ru">Контакт</a>
+                    }
+                    else
+                    {
+                        <a style="float:left" @if (Page.Code == "Index") { <text> class="s-selected" </text> } href="/">Home</a>
+                        @*<a style="float:left" @if (Page.Code == "Flowers") { <text> class="s-selected" </text> } href="/Flowers">Flowers</a>*@
+                        @*<a style="float:left" @if (Page.Code == "greatblessinglanier") { <text> class="s-selected" </text> } href="/greatblessinglanier">Blessing of water at lake Lanier</a>*@
+                        @*<a style="float:left" @if (Page.Code == "FundRaising") { <text> class="s-selected" </text> } href="/FundRaising">Fund Raising</a>*@
+                        @*<a style="float:left" @if (Page.Code == "About") { <text> class="s-selected" </text> } href="/About">About</a>*@
+                        <a style="float:left" @if (Page.Code == "Contact") { <text> class="s-selected" </text> } href="/Contact">Contact</a>
+                    }
+                </section>
+                @**** TODO Log-in ***id="login"*@
+                @* <section role="menu">
+                    @if (WebSecurity.IsAuthenticated)
+                    {
+                        <text>
+                            <a style="float:right" href="/Account/Manage" title="Manage">@WebSecurity.CurrentUserName</a>
+                            <a style="float:right" href="javascript:document.getElementById('logoutForm').submit()">Log out</a>
+                        </text>
+                    }
+                    else
+                    {
+                        if (ru)
+                        {
+                            <a style="float:right" @if (Page.Code == "Register") { <text> class="s-selected" </text> } href="/Account/Register/ru">Регистрация</a>
+                            <a style="float:right" @if (Page.Code == "Login") { <text> class="s-selected" </text> } href="/Account/Login/ru">Войти</a>
+                        }
+                        else
+                        {
+                            <a style="float:right" @if (Page.Code == "Register") { <text> class="s-selected" </text> } href="/Account/Register">Register</a>
+                            <a style="float:right" @if (Page.Code == "Login") { <text> class="s-selected" </text> } href="/Account/Login">Log in</a>
+                        }
+                    }
+                        </section>*@
+            </div>
+            <div style="clear:both"></div>
+        </nav>
+    </header>
+    <div id="body">
+        @RenderSection("featured", required: false)
+        <section style="text-align:center">
+            @RenderBody()
+        </section>
+    </div>
+    <footer>
+        <div class="s-content" style="text-align:center">
+            <p>&copy; 2010 - @DateTime.Now.Year Joy of All Who Sorrow Russian Orthodox Church</p>
+        </div>
+    </footer>
+    @*<form id="logoutForm" action="@if (ru) {<text>/Account/Logout/ru</text>} else{<text>/Account/Logout</text>}" method="post">
+            @AntiForgery.GetHtml()
+        </form>*@
+    @RenderSection("Scripts", required: false)
+    @{
+        var error = Request.Params["error"];
+        if (!string.IsNullOrEmpty(error))
+        {
+            <script language="javascript">alert("Error in @error page!\nRedirecting to home page")</script>
+        }
+    }
+</body>
+</html>

@@ -1,0 +1,13 @@
+﻿@{
+    if (UrlData.Count > 0)
+    {
+        Response.RedirectPermanent("/ru", true);
+    }
+    Page.IsRu = true;
+    Page.Code = "Index";
+    Page.Title = "Главная";
+}
+@RenderPage("~/Index.cshtml")
+@{ 
+    this.Page.Title = Page.Title;
+}

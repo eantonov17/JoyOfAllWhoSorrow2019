@@ -1,0 +1,143 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+image { /*an exception to be able use image's width & height*/
+    box-sizing: content-box;
+}
+
+html {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1em;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+    padding: 0.17rem 0;
+}
+
+h1, h2, h3, h4 {
+    clear: both;
+    display: inline;
+}
+
+h3 {
+    margin: 0.3rem;
+}
+
+h4 {
+    margin: 0.2rem;
+}
+
+.s-content {
+    margin: 0 auto;
+    max-width: 940px;
+    padding: 0.17rem 0;
+}
+
+.s-content-narrow {
+    margin: 0 auto;
+    max-width: 720px;
+    padding: 0.17rem 0;
+}
+
+footer, .s-header {
+    background-color: hsl(206, 80%, 20%);
+    color: hsl(206, 100%, 90%);
+    padding: 0.1em;
+}
+
+    .s-header a {
+        outline: none;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        text-decoration: none;
+    }
+
+nav a:link, nav a:visited {
+    color: inherit;
+}
+
+nav a:hover, nav a:active {
+    background-color: hsl(206, 80%, 40%);
+    border-radius: 0.6rem;
+    color: white;
+}
+
+.s-title {
+    font-size: 1.33em;
+    text-align: center;
+}
+
+    .s-title :link, .s-title :visited {
+        color: inherit;
+    }
+
+    .s-title :hover, .s-title :active {
+        background-color: hsl(206, 80%, 40%);
+        border-radius: 0.6em;
+        color: white;
+    }
+
+.s-button {
+    background-color: hsl(206, 80%, 40%);
+    border-radius: 12px;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1em;
+    text-align: center;
+}
+
+    .s-button :link, .s-button :visited {
+        color: inherit;
+    }
+
+    .s-button :hover, .s-button:active {
+        color: white;
+    }
+
+.s-flex-space-around-centered-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.s-selected {
+    background-color: hsl(206, 80%, 40%);
+    border-radius: 0.6em;
+    color: white;
+    font-weight: 900;
+}
+
+    .s-selected :link, .s-selected :visited {
+        color: white;
+    }
+
+.s-listing {
+}
+
+    .s-listing label { /*label*/
+        font-size: larger;
+        font-weight: bolder;
+    }
+
+    .s-listing > div { /*container for listing text*/
+        padding: .25rem 0;
+    }
+
+    .s-listing img {
+        width: 1rem;
+        height: 1rem;
+        margin: 0;
+        vertical-align: middle;
+    }

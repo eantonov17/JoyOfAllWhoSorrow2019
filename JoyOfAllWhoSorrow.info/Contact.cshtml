@@ -1,0 +1,116 @@
+﻿@{
+    Layout = "~/_SiteLayout.cshtml";
+    Page.Code = "Contact";
+
+    var ru = UrlData[0] == "ru";
+    Page.Title = ru ? "Контакт" : "Contact";
+    var address = ru ? "Адрес" : "Address";
+    var phone = ru ? "Телефон" : "Phone";
+    var email = ru ? "Электронная почта" : "Email";
+    var subject = ru ? "Вопрос к Всех Скорбящих Радость" : "Question to Joy of All Who Sorrow";
+    var cemetery = ru ? "Православное кладбище" : "Orthodox cemetery";
+    var mailList = ru ? "Почтовый лист" : "Mailing list";
+    var mailListSubscribe = ru ? "Посмотреть/Подписаться" : "Browse/Subscribe";
+    var social = ru ? "Социальные сети" : "Social networking sites";
+}
+<!-- To add a geolink to a page, you need to download the API code with the Geolink module. -->
+<script src="https://api-maps.yandex.ru/2.1/?load=Geolink&amp;lang=en_US" type="text/javascript"></script>
+
+<div class="s-content-narrow">
+    @if (ru)
+    {
+        <p>
+            Мы - приход Русской Православной Церкви, расположенный в г. Камминг, штат Джорджия.
+        </p>
+        <p>
+            Наши прихожане приезжают со всех концов мегаполиса Атланта и далее.
+        </p>
+        <p>
+            Наши службы проходят на церковнославянском и английском языках.
+        </p>
+        <p>
+            Субботняя Всенощная в 6 вечера.
+        </p>
+        <p>
+            Воскресная Литургия в 9:30 утра.
+        </p>
+        <p>
+            <a href="/ru/#calendar">Время всех служб указано в календаре на Главной странице.</a>.
+        </p>
+        <p>
+            Свадьбы, крещения, благословение домов, похороны, панихиды,
+            молебны и другие частные службы
+            проводятся по согласованию со священником.
+        </p>
+    }
+    else
+    {
+        <p>
+            We are a parish of the Russian Orthodox Church located in Cumming, Georgia.
+        </p>
+        <p>
+            Our parishioners come from all parts of the metropolitan Atlanta area and beyond.
+        </p>
+        <p>
+            Our services are in Church Slavonic and English.
+        </p>
+        <p>
+            Saturday All-Night Vigil at 6:00 PM.
+        </p>
+        <p>
+            Sunday Divine Liturgy at 9:30 AM.
+        </p>
+        <p>
+            Schedule of all services is provided <a href="/#calendar">on the Main page.</a>
+        </p>
+        <p>
+            Weddings, baptism, house blessings, funeral and memorial services,
+            prayers for health, and other personal services
+            are held in coordination with the priest.
+        </p>
+    }
+
+</div>
+<div>
+    <section class="s-content">
+        <img src="~/Images/joy-building.jpg"
+             alt="@if (ru) {<text>Здание храма Всех Скорбящих Радость</text>}else {<text>Joy of All Who Sorrow church building</text>}"
+             style="width:205px;height:153px;margin:0.2em 0 0 0">
+    </section>
+</div>
+@Sections.Donate(ru)
+<div style="background-color:hsl(190, 64%, 79%); clear:both; padding:.25em; text-align:center">
+    <div class="s-content s-listing">
+        <div>
+            <label>@address:</label>
+            <a target="_blank" href="https://www.google.com/maps/place/6728+Campground+Rd,+Cumming,+GA+30040">
+                <img src="~/Images/google-maps-16px.png"
+                     alt="@if (ru){<text>Карты Гугл</text>}else{<text>Google maps</text>}" />
+                6728 Campground Rd, Cumming, Georgia, USA
+            </a>
+        </div>
+        <div>
+            <label class="s-label">@phone:</label>
+            <a target="_blank" href="tel:+1-678-576-6176">+1-678-576-6176</a>
+        </div>
+        <div>
+            <label class="s-label">@email:</label>
+            <a target="_blank" href="mailto:Church@JoyOfAllWhoSorrow.info?subject=@subject">Church@JoyOfAllWhoSorrow.info</a>
+        </div>
+        <div>
+            <label class="s-label">@cemetery:</label>
+            <a target="_blank" href="//www.stmichaelgarden.com/about">www.stmichaelgarden.com/about</a>
+        </div>
+        <div>
+            <label class="s-label">@mailList:</label>
+            <a target="_blank" href="https://groups.google.com/forum/#!forum/joyofallwhosorrowga">
+                <img src="~/Images/google-groups-icon.png" /> @mailListSubscribe
+            </a>
+        </div>
+        <div>
+            <label class="s-label">@social:</label>
+            <a target="_blank" href="https://www.facebook.com/joyofallwhosorrowga/"><img src="~/Images/facebook-icon.png" /></a>
+            <a target="_blank" href="https://www.youtube.com/channel/UCqY6wDbaPELzTHAtGaLVU_w"><img src="~/Images/youtube-icon.png" /></a>
+        </div>
+    </div>
+</div>
